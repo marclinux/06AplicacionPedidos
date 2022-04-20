@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06AplicacionPedidos", "06AplicacionPedidos\06AplicacionPedidos.csproj", "{BA23A1D5-AE52-432F-80A6-254798EE3F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06libPedidos", "06libPedidos\06libPedidos.csproj", "{71466953-127E-4B3A-BB88-858972E3080D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA23A1D5-AE52-432F-80A6-254798EE3F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA23A1D5-AE52-432F-80A6-254798EE3F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA23A1D5-AE52-432F-80A6-254798EE3F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA23A1D5-AE52-432F-80A6-254798EE3F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71466953-127E-4B3A-BB88-858972E3080D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71466953-127E-4B3A-BB88-858972E3080D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71466953-127E-4B3A-BB88-858972E3080D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71466953-127E-4B3A-BB88-858972E3080D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6532DA1-0EE6-4397-A69D-F91B57C91D50}
+	EndGlobalSection
+EndGlobal
