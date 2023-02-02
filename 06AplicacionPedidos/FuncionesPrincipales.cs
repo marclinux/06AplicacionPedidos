@@ -67,6 +67,96 @@ namespace _06AplicacionPedidos
             Console.WriteLine(precioSinImpuestos.ToString("C"));
             Console.WriteLine(Montos.ToString());
         }
+
+        public static void EjemploColeccionesClientes()
+        {
+            List<clsClientes> Clientes = new List<clsClientes>();
+            int opcion = 0;
+            do
+            {
+                Console.WriteLine("Opciones de la lista de clientes");
+                Console.WriteLine();
+                Console.WriteLine("1. Agregar cliente");
+                Console.WriteLine("2. Mostrar lista");
+                Console.WriteLine("3. Eliminar cliente");
+                Console.WriteLine("4. Salir");
+                opcion = Convert.ToInt32(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        Console.WriteLine("Dame los datos del cliente");
+                        clsClientes cliente = new clsClientes();
+                        Console.WriteLine("Dame el id del cliente");
+                        cliente.idCliente = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Dame el nombre completo del cliente");
+                        cliente.NombreCompleto = Console.ReadLine();
+                        Console.WriteLine("Dame el RFC del cliente");
+                        cliente.Rfc = Console.ReadLine();
+                        Clientes.Add(cliente);
+                        break;
+                    case 2:
+                        foreach (clsClientes item in Clientes)
+                        {
+                            Console.WriteLine(item.ToString());
+                        }
+                        break;
+                    case 3:
+                        Console.WriteLine("Dame la posicion de la lista:");
+                        int posicion = Convert.ToInt32(Console.ReadLine());
+                        Clientes.RemoveAt(posicion);
+                        break;
+                    default:
+                        break;
+                }
+            } while (opcion != 4);
+        }
+
+        public static void EjemploDiccionario()
+        {
+            try
+            {
+                //clsRepositorioMemProductos repoMProductos = new clsRepositorioMemProductos();
+                clsRepositorioArchivoProductos repoArchProductos =
+                    new clsRepositorioArchivoProductos(@"C:\Users\Marcos\source\repos\CursoCSharp10\06AplicacionPedidos\06AplicacionPedidos\Archivos\Productos.txt");
+                ctrObtenProductos cProductos = new ctrObtenProductos(repoArchProductos);
+                cProductos.ObtenProductos();
+                int opcion = 0;
+                do
+                {
+                    Console.WriteLine("Opciones del diccionario de productos");
+                    Console.WriteLine();
+                    Console.WriteLine("1. Ver la lista de productos");
+                    Console.WriteLine("2. Buscar un producto por código de barras");
+                    Console.WriteLine("3. Salir");
+                    opcion = Convert.ToInt32(Console.ReadLine());
+                    switch (opcion)
+                    {
+                        case 1:
+                            foreach (recProductos item in cProductos.Productos.Values)
+                            {
+                                Console.WriteLine(item.ToString());
+                            }
+                            break;
+                        case 2:
+                            Console.WriteLine("Dame un código de barras");
+                            string codigo = Console.ReadLine();
+                            recProductos producto;
+                            if (cProductos.ObtenProducto(codigo, out producto))
+                                Console.WriteLine("El valor encontrado es:" +
+                                    producto.ToString());
+                            else
+                                Console.WriteLine("El producto no se encontró");
+                            break;
+                        default:
+                            break;
+                    }
+                } while (opcion != 3);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         #endregion
     }
 }
